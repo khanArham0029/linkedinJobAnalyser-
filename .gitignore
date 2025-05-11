@@ -1,0 +1,14 @@
+# Ignore env & compiled files
+.env
+*.pyc
+__pycache__/
+*.pkl
+*.sqlite3
+.DS_Store
+
+# VS Code and PyCharm
+.vscode/
+.idea/
+
+# Gradio flagged data
+flagged/
