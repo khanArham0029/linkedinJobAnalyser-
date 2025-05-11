@@ -8,11 +8,19 @@ from agents.jobanalyser import job_analyser_agent
 from Ui.cv_analyzer_tab import cv_analyzer_tab
 from Ui.profile_tab import profile_ui
 from Ui.profile_analyzer_tab import profile_analyzer_ui
+from Ui.cv_maker_tab import cv_maker_tab
 import asyncio
 import fitz
 import json
 import os
 from typing import List
+
+
+shared_cv_text = gr.State()
+shared_job_id = gr.State()
+shared_job_info = gr.State()
+shared_cv_suggestions = gr.State()
+
 
 
 # --- Gradio UI ---
@@ -28,8 +36,10 @@ with gr.Blocks(title="Job Fit Analyzer") as demo:
             profile_analyzer_ui()
         
         with gr.Tab(" CV Analyzer"):
-            cv_analyzer_tab()
+            cv_analyzer_tab(shared_cv_text, shared_job_id, shared_job_info, shared_cv_suggestions)
 
+        with gr.Tab("🧾 Generate personalized  CV"):
+            cv_maker_tab(shared_cv_text, shared_job_id, shared_job_info, shared_cv_suggestions)
 
         with gr.Tab(" History / Export"):
             gr.Markdown("📝 This section will let you save & compare results (coming soon).")

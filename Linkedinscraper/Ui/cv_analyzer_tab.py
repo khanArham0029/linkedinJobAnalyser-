@@ -11,7 +11,7 @@ def extract_text_from_pdf(pdf_file) -> str:
     doc = fitz.open(pdf_file.name)
     return "\n".join(page.get_text() for page in doc)
 
-async def analyze_job_fit(job_id: str, cv_file):
+async def analyze_job_fit(job_id: str, cv_file, shared_cv_text, shared_job_id, shared_job_info, shared_cv_suggestions) :
     if cv_file is not None:
         cv = extract_text_from_pdf(cv_file)
     else:
@@ -58,9 +58,23 @@ Return your answer as a JSON object with:
         f"###  CV Recommendations:\n- " + "\n- ".join(output.cv_recommendations)
     )
 
+    # Update shared state variables
+    shared_cv_text.value = cv
+    shared_job_id.value = job_id
+    shared_job_info.value = job
+    shared_cv_suggestions.value = {
+        "summary": output.summary,
+        "score": output.score,
+        "required_skills": output.required_skills,
+        "matched_skills": output.matched_skills,
+        "missing_skills": output.missing_skills,
+        "cv_recommendations": output.cv_recommendations
+        }
+
+
     return formatted, gr.update(visible=False)
 
-def cv_analyzer_tab():
+def cv_analyzer_tab(shared_cv_text, shared_job_id, shared_job_info, shared_cv_suggestions):
     uploaded_cv_file = gr.File(label="Upload CV (PDF)", file_types=[".pdf"])
     job_id_input = gr.Textbox(label="LinkedIn Job ID")
     analyze_btn = gr.Button("Analyze CV Fit", variant="primary")
@@ -68,7 +82,10 @@ def cv_analyzer_tab():
     analysis_output = gr.Markdown()
 
     async def run_analysis(job_id, file):
-        result, _ = await analyze_job_fit(job_id, file)
+        result, _ = await analyze_job_fit(job_id, file,shared_cv_text,
+        shared_job_id,
+        shared_job_info,
+        shared_cv_suggestions)
         return result
     
     analyze_btn.click(
