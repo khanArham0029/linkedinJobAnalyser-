@@ -26,6 +26,7 @@ async def run_cv_generation(shared_cv_text, shared_job_id, shared_job_info, shar
         profile=profile,
         job=job,
         cv_text=cv_text,
+        original_cv=cv_text,
         cv_suggestions=suggestions,
         final_cv=None
     )

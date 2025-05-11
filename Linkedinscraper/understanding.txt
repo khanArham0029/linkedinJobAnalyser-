@@ -1,6 +1,0 @@
-Step 1: Extract the jobs V2
-Step 2: Get job details
-Step 3: Analyse the jobs and filter them
-Step 4: Write them on DB
-Step 5: Get hiring managers for these jobs
-Step 6: Streamlit UI
