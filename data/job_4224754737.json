@@ -1,0 +1,33 @@
+{
+  "job_info": {
+    "title": "Freelance AI/3D Developer \u2013 Avatar Dataset Training (Remote)",
+    "description": "About Us:\nCircle of Care Academy is an inclusive education initiative building accessible, AI-powered tools to support diverse learners. We are currently exploring 3D avatar solutions that integrate sign language datasets and improve interactive learning experiences.\n\nRole Overview:\nWe are seeking a freelance AI/3D developer with experience in working on avatar training models using existing open-source datasets. This is a part-time, contract-based opportunity with an initial budget of USD $100/month, ideal for a student, hobbyist, or early-career developer looking to collaborate on a meaningful project.\n\nResponsibilities:\n\nWork with open-source 3D human model datasets (e.g., SMPL, MVP-Human, SynBody)\n\nAssist in model selection, cleaning, and basic training for avatar generation\n\nProvide guidance on low-cost or open-source tools to optimize performance\n\nShare lightweight documentation and test outputs\n\nCommunicate progress clearly with the Head of Operations (remote)\n\n\nRequirements:\n\nExperience with AI model training, 3D avatar pipelines, or motion capture\n\nFamiliarity with Python, PyTorch/TensorFlow, and Blender or Unity\n\nComfortable using Google Colab or HuggingFace for hosted training\n\nKnowledge of sign language datasets (ASL/BSL) is a bonus, not mandatory\n\n\nBudget:\n$100/month (adjustable based on task completion, impact, and continued collaboration)\n\nHow to Apply:\nDM or email with your:\n\nShort intro\n\nRelevant portfolio or GitHub\n\nAvailability and timezone\n\nComfort level with the proposed budget and tools",
+    "location": "Pakistan",
+    "location_id": "urn:li:fs_geo:101022442",
+    "employment_status": "Part-time",
+    "is_remote_allowed": true,
+    "is_third_party_sourced": false,
+    "listed_at": "2025-05-10T09:28:37",
+    "expire_at": "2025-11-06T08:28:37",
+    "job_url": "https://www.linkedin.com/jobs/view/4224754737/?trk=jobs_biz_prem_srch",
+    "experience_level": "",
+    "is_new": false
+  },
+  "company_info": {
+    "name": "Circle of Care Creative Writing Workshop",
+    "description": "Creative Writing Workshop for kids 8+",
+    "staff_count": 1,
+    "industries": [
+      "E-Learning Providers"
+    ],
+    "universal_name": "circle-of-care-online-education",
+    "url": "https://www.linkedin.com/company/circle-of-care-online-education",
+    "logo_url": "https://media.licdn.com/dms/image/v2/C4D0BAQHB1ZtcktInyA/company-logo_200_200/company-logo_200_200/0/1630550244672?e=1752710400&v=beta&t=hXn0nRbM1baFvCuzavqYXv9wmoFYExDhqDEgb084I-8",
+    "background_cover_url": "https://media.licdn.com/dms/image/v2/C4D1BAQHyXeYCJ5uRkA/company-background_10000/company-background_10000/0/1601963337724/circle_of_care_online_education_cover?e=1747580400&v=beta&t=8u2wQzZ1NdsTBwNvhpwFw1c0BUzV32IiRHIKpCyqydM"
+  },
+  "apply_details": {
+    "total_applies": 42,
+    "total_views": 160,
+    "is_application_limit_reached": false
+  }
+}
