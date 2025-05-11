@@ -12,20 +12,48 @@ class JobAnalyser(BaseModel):
     score: int = Field(description="The confidence score (0-100) for the job posting")
     summary: str = Field(description="A summary of the job posting")
     required_skills: List[str] = Field(description="List of required skills for the job")
+    matched_skills: List[str] = Field(description="Skills from the required list that are present in the user's CV")
+    missing_skills: List[str] = Field(description="Skills from the required list that are missing in the user's CV")
     cv_recommendations: List[str] = Field(description="Specific suggestions to improve the CV for this job")
 
 system_prompt = """
-You are a career assistant that evaluates how well a user's resume (CV) matches a job posting.
+You are an AI career assistant.
 
-Given a job description and a user CV:
-1. Analyze the alignment between the job and the user's experience.
-2. Return a JSON with:
-    - score (0–100): match confidence
-    - summary: a concise summary of the job role
-    - required_skills: bullet-point list of job-specific skills
-    - cv_recommendations: actionable suggestions for the user to improve their CV to better fit the job
+Your task is to analyze how well a user's CV matches a specific job description. Use a structured and consistent format.
 
-Make sure `required_skills` and `cv_recommendations` are **never empty**. Even if the match is poor, recommend what the user can do to improve.
+---
+
+## Job Description
+{job_title}
+{company_name}
+{location}
+
+{job_description_text}
+
+---
+
+## User CV
+{cv_text}
+
+---
+
+## Instructions:
+Based on the above, return a JSON object with the following **exact keys** and structure:
+
+{
+  "summary": "<A 2-3 line summary of the job in plain English>",
+  "score": <Integer from 0 to 100 representing how well the user's CV matches this job>,
+  "required_skills": ["Skill A", "Skill B", ...],
+  "matched_skills": ["Skill X", "Skill Y", ...],
+  "missing_skills": ["Skill Z", ...],
+  "cv_recommendations": [
+    "<Suggestion 1: Add more detail on your experience with Skill Z>",
+    "<Suggestion 2: Mention familiarity with remote collaboration tools>",
+    "<Suggestion 3: Improve formatting to highlight leadership roles>"
+  ]
+}
+
+❗ Do not add any extra commentary. Only return the structured JSON object. Ensure keys are always present and correctly named.
 """
 
 job_analyser_agent = Agent(
