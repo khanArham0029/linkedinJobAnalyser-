@@ -1,0 +1,18 @@
+{
+  "name": "Muhammad Arham Akmal",
+  "university": "FAST-NUCES, Islamabad",
+  "degree": "BS Computer Science (2021\u20132025)",
+  "courses": "AI, Deep Learning, NLP, Database, DSA, Networks, Parallel Computing, Software Engineering",
+  "experience": [
+    " Software Engineer Intern at TeReSol (Jun\u2013Aug 2024)",
+    "Lab Demonstrator for Computer Org & Assembly (Spring 2024)"
+  ],
+  "skills": "Python, JavaScript, C++, SQL, Java, Supervised Learning, Deep Learning, NLP, RAG, AutoML, TensorFlow, PyTorch, Scikit-learn, OpenCV, Hugging Face, Vue.js, Flask, FastAPI, Google Cloud, Vertex AI, CI/CD, MongoDB, REST APIs",
+  "projects": [
+    "EduVantage (AI university recommender using LangChain & MERN)",
+    "Chess Move Prediction System (YOLOv8n + Gemini Flash)",
+    "Video Prediction (UCF101, PyTorch)",
+    "Glaucoma Detection (CNN with 90% accuracy)",
+    "AutoML Vision (Google Cloud Vertex AI)"
+  ]
+}
